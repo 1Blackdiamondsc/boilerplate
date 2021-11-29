@@ -36,6 +36,7 @@ describe('Test sCrypt contract Callee in Javascript', () => {
     callee = new Callee();
 
     const newLockingScript = ['OP_FALSE', 'OP_RETURN', num2bin(a, 2) + num2bin(b, 2) + num2bin(c, 2)+ num2bin(x, 2)].join(' ')
+    console.log(bsv.Script.fromASM(newLockingScript).toHex())
     tx.addOutput(
       new bsv.Transaction.Output({
         script: bsv.Script.fromASM(newLockingScript),
